@@ -1,0 +1,44 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.4.1.RELEASE")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'spring-boot'
+
+group = 'io.brant.phantomjs.example'
+version = '1.0-SNAPSHOT'
+
+description = "phantomjs.example"
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+tasks.withType(JavaCompile) {
+	options.encoding = 'UTF-8'
+}
+
+
+repositories {
+	mavenCentral()        
+}
+
+dependencies {
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-freemarker'
+    
+    compile group: 'xml-apis', name: 'xml-apis', version:'1.4.01'
+    compile(group: 'com.github.detro.ghostdriver', name: 'phantomjsdriver', version:'1.1.0') {
+		exclude(module: 'servlet-api-2.5')
+    }
+    compile group: 'net.sf.barcode4j', name: 'barcode4j', version:'2.1'
+    compile group: 'net.glxn.qrgen', name: 'javase', version:'2.0'
+    
+    testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test'
+}
