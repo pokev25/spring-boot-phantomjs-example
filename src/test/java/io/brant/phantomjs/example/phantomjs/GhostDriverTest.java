@@ -23,7 +23,7 @@ public class GhostDriverTest {
 	public void captureKakaoDotCom() throws IOException {
 		BufferedImage capturedImage = ghostDriver.getScreenshotAsBufferedImage("http://www.kakao.com");
 
-		ImageIO.write(capturedImage, "png", new File("/Users/brant/Desktop/kakao.png"));
+		ImageIO.write(capturedImage, "png", new File("test/kakao.png"));
 	}
 
 	@Test
@@ -33,9 +33,9 @@ public class GhostDriverTest {
 		captureConfig.setHeight(620);
 
 		BufferedImage brant = ghostDriver.getScreenshotAsBufferedImage("http://localhost:8080/coupon?name=Brant&price=10,000&code=brantplate::1000", captureConfig);
-		ImageIO.write(brant, "png", new File("/Users/brant/Desktop/brant.png"));
+		ImageIO.write(brant, "png", new File("test/brant.png"));
 
 		BufferedImage tiffany = ghostDriver.getScreenshotAsBufferedImage("http://localhost:8080/coupon?name=Tiffany&price=20,000&code=brantplate::1001", captureConfig);
-		ImageIO.write(tiffany, "png", new File("/Users/brant/Desktop/tiffany.png"));
+		ImageIO.write(tiffany, "png", new File("test/tiffany.png"));
 	}
 }

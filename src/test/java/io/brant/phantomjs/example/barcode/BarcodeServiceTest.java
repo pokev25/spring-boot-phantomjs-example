@@ -23,13 +23,13 @@ public class BarcodeServiceTest {
 	public void barcodeTest() throws IOException {
 		BufferedImage barcode = barcodeService.barcode("brantplate::5234");
 
-		ImageIO.write(barcode, "png", new File("/Users/brant/Desktop/barcode.png"));
+		ImageIO.write(barcode, "png", new File("test/barcode.png"));
 	}
 
 	@Test
 	public void qrCodeTest() throws IOException, InterruptedException {
 		BufferedImage barcode = barcodeService.qrCode("brantplate::5234");
 
-		ImageIO.write(barcode, "png", new File("/Users/brant/Desktop/qrcode.png"));
+		ImageIO.write(barcode, "png", new File("test/qrcode.png"));
 	}
 }
